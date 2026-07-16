@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /$
+Allow: /nl/
+Disallow: /info/
+
+Sitemap: https://zomerstage.shoonyadance.com/sitemap.xml

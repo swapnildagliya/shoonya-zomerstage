@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+
+<!-- Private participant info page — EN ↔ NL pair. EN: /info/ · NL: /info/nl/ -->
+
+<title>Zomerstage 2027 — Practical Info · Shoonya</title>
+<meta name="description" content="Practical info for registered Zomerstage 2027 participants: when to arrive, getting to Buoux, your stay, meals, what to bring and good to know.">
+<meta name="author" content="Shoonya Dance Centre">
+<link rel="canonical" href="https://zomerstage.shoonyadance.com/info/">
+<link rel="alternate" hreflang="en" href="https://zomerstage.shoonyadance.com/info/">
+<link rel="alternate" hreflang="nl" href="https://zomerstage.shoonyadance.com/info/nl/">
+<link rel="alternate" hreflang="x-default" href="https://zomerstage.shoonyadance.com/info/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Zomerstage 2027 — Practical Info">
+<meta property="og:description" content="Practical info for registered Zomerstage 2027 participants: when to arrive, getting to Buoux, your stay, meals and what to bring.">
+<meta property="og:url" content="https://zomerstage.shoonyadance.com/info/">
+<meta property="og:site_name" content="Shoonya Dance Centre">
+<meta property="og:locale" content="en_GB">
+<meta property="og:locale:alternate" content="nl_BE">
+<meta property="og:image" content="https://zomerstage.shoonyadance.com/assets/og-image.jpg">
+
+<link rel="icon" href="../assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="../assets/favicon.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&amp;family=PT+Serif:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --paper:#F4F1EB;
+  --paper-warm:#FBF4E6;
+  --ink:#1F1B16;
+  --ink-body:#4A4A4A;
+  --purple:#B564F7;
+  --purple-legible:#7B3FD6;
+  --line:rgba(31,27,22,.14);
+  --lazy:rgba(26,25,23,.06);
+  --ease:cubic-bezier(.22,1,.36,1);
+  --nav-h:56px;
+}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'PT Serif',Georgia,serif;
+  background:var(--paper);
+  color:var(--ink-body);
+  font-size:17px;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{display:block;max-width:100%;}
+a{color:inherit;overflow-wrap:anywhere;}
+h1,h2,h3{font-family:'Marcellus',Georgia,serif;font-weight:400;color:var(--ink);}
+.wrap{max-width:880px;margin:0 auto;padding:0 clamp(20px,5vw,48px);}
+.skip-link{
+  position:fixed;top:8px;left:8px;z-index:100;transform:translateY(-160%);
+  background:var(--paper);color:var(--ink);padding:12px 16px;border:1px solid var(--purple-legible);
+  font-family:'Inter',sans-serif;font-size:14px;text-decoration:none;
+}
+.skip-link:focus{transform:none;}
+
+.eyebrow{
+  font-family:'Inter',sans-serif;font-size:12px;font-weight:600;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--purple-legible);
+  display:block;margin-bottom:14px;
+}
+@media(max-width:480px){ .eyebrow{letter-spacing:.12em;} }
+
+/* ── sticky nav with jump links ── */
+.nav{
+  position:sticky;top:0;z-index:50;background:rgba(244,241,234,.98);
+  border-bottom:.5px solid var(--line);height:var(--nav-h);
+}
+.nav-inner{max-width:1120px;margin:0 auto;padding:0 clamp(16px,4vw,40px);height:100%;display:flex;align-items:center;gap:18px;}
+.nav-logo{flex-shrink:0;display:flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;}
+.nav-logo img{height:17px;width:auto;filter:invert(1);opacity:.82;}
+.nav-jump{
+  flex:1;display:flex;align-items:center;gap:22px;overflow-x:auto;
+  scrollbar-width:none;-ms-overflow-style:none;
+}
+.nav-jump::-webkit-scrollbar{display:none;}
+.nav-jump a{
+  font-family:'Inter',sans-serif;font-size:12px;font-weight:500;letter-spacing:.05em;
+  text-transform:uppercase;color:var(--ink-body);text-decoration:none;white-space:nowrap;
+  min-height:44px;display:inline-flex;align-items:center;padding:4px 0;border-bottom:1.5px solid transparent;transition:color .2s,border-color .2s;
+}
+.nav-jump a:hover{color:var(--purple-legible);border-color:var(--purple-legible);}
+.nav-lang{
+  flex-shrink:0;font-family:'Inter',sans-serif;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--ink);text-decoration:none;border:.5px solid var(--line);padding:6px 12px;min-width:44px;min-height:44px;display:inline-flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s,color .2s;
+}
+.nav-lang:hover{background:var(--paper-warm);border-color:var(--purple-legible);color:var(--purple-legible);}
+
+/* ── hero ── */
+.hero-band{position:relative;min-height:clamp(300px,46vh,440px);display:flex;align-items:flex-end;overflow:hidden;background:var(--ink);}
+.hero-band img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 52%;}
+.hero-band-overlay{position:absolute;inset:0;background:linear-gradient(to top, rgba(31,27,22,.78), rgba(31,27,22,.34) 55%, rgba(31,27,22,.12) 85%);}
+.hero-band-inner{position:relative;z-index:2;width:100%;padding:clamp(40px,8vh,72px) 0 clamp(52px,9vh,88px);}
+.hero-band .eyebrow{color:#fff;opacity:.95;}
+.hero-band h1{color:#fff;font-size:clamp(30px,4.8vw,50px);line-height:1.1;margin-bottom:12px;text-shadow:0 2px 22px rgba(31,27,22,.45);max-width:20ch;}
+.hero-band-meta{font-family:'Inter',sans-serif;font-size:13.5px;font-weight:500;letter-spacing:.03em;text-transform:uppercase;color:rgba(255,255,255,.9);font-variant-numeric:tabular-nums;}
+
+/* ── at-a-glance card (overlaps hero) ── */
+.glance-wrap{position:relative;z-index:5;margin-top:clamp(-64px,-7vw,-44px);}
+.glance{background:#fff;border:.5px solid var(--line);padding:clamp(24px,3.5vw,36px);}
+.glance-title{font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--purple-legible);margin-bottom:20px;}
+.glance-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px 40px;}
+.glance-item .g-label{font-family:'Inter',sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-body);display:block;margin-bottom:5px;}
+.glance-item .g-value{display:block;font-family:'Marcellus',serif;font-size:clamp(18px,2vw,21px);color:var(--ink);line-height:1.25;}
+.glance-item .g-sub{display:block;font-family:'Inter',sans-serif;font-size:13px;color:var(--ink-body);margin-top:5px;}
+.glance-item .g-value a,.glance-item .g-sub a{color:var(--purple-legible);text-decoration:underline;text-underline-offset:3px;}
+.glance-note{margin-top:22px;padding-top:20px;border-top:.5px solid var(--line);font-family:'PT Serif',serif;font-size:15.5px;color:var(--ink);}
+.glance-note strong{color:var(--purple-legible);}
+@media(max-width:560px){ .glance-grid{grid-template-columns:1fr;gap:18px;} }
+
+/* ── sections ── */
+section.block{padding:clamp(46px,7vh,76px) 0;scroll-margin-top:calc(var(--nav-h) + 8px);}
+.block.cream{background:var(--paper-warm);}
+h2.sec-head{font-size:clamp(26px,3.6vw,38px);line-height:1.15;margin-bottom:6px;}
+.sec-intro{font-family:'PT Serif',serif;font-style:italic;font-size:16.5px;color:var(--ink-body);margin-bottom:24px;max-width:62ch;}
+h3.sub-head{font-family:'Marcellus',Georgia,serif;font-weight:400;font-size:clamp(19px,2.2vw,23px);color:var(--ink);margin:32px 0 10px;}
+h3.sub-head:first-of-type{margin-top:26px;}
+.body-copy p{margin-bottom:16px;max-width:66ch;}
+.body-copy p:last-child{margin-bottom:0;}
+.link-line{font-family:'Inter',sans-serif;font-size:14.5px;color:var(--ink-body);margin-top:8px;}
+.link-line a{color:var(--purple-legible);text-decoration:underline;text-underline-offset:3px;}
+
+/* two-column sub-blocks (getting there) */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,52px);margin-top:6px;}
+.cols > div > h3.sub-head:first-of-type{margin-top:0;}
+@media(max-width:720px){ .cols{grid-template-columns:1fr;gap:8px;} }
+
+/* generic bullet list */
+.info-list{list-style:none;margin-top:18px;}
+.info-list li{position:relative;padding-left:24px;margin-bottom:15px;line-height:1.7;max-width:66ch;}
+.info-list li:last-child{margin-bottom:0;}
+.info-list li::before{content:'—';position:absolute;left:0;top:0;color:var(--purple-legible);}
+.info-list strong{font-weight:700;color:var(--ink);}
+
+/* two-column packing list on desktop */
+.list-2col{margin-top:20px;}
+@media(min-width:640px){ .list-2col{columns:2;column-gap:48px;} .list-2col li{break-inside:avoid;max-width:none;} }
+
+/* ordered directions list */
+.dir-list{list-style:none;counter-reset:dir;margin-top:20px;max-width:66ch;}
+.dir-list li{position:relative;padding-left:34px;margin-bottom:15px;line-height:1.7;counter-increment:dir;}
+.dir-list li:last-child{margin-bottom:0;}
+.dir-list li::before{
+  content:counter(dir);position:absolute;left:0;top:1px;
+  font-family:'Inter',sans-serif;font-size:12.5px;font-weight:600;color:#fff;
+  background:var(--purple-legible);width:20px;height:20px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+}
+
+/* callout — full hairline border keeps the annotation clear without an accent stripe */
+.callout{background:var(--paper-warm);border:.5px solid var(--line);padding:22px 26px;margin:0 0 4px;max-width:72ch;}
+.block.cream .callout{background:#fff;}
+.callout.warn{background:#fff;border:1px solid var(--purple-legible);}
+.callout .callout-label{font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--purple-legible);display:block;margin-bottom:8px;}
+.callout p{font-family:'PT Serif',serif;font-size:16.5px;color:var(--ink);line-height:1.7;}
+.callout p + p{margin-top:10px;}
+
+/* address box */
+.address-box{border:.5px solid var(--line);background:#fff;padding:20px 24px;margin:6px 0 8px;max-width:66ch;}
+.block.cream .address-box{background:var(--paper);}
+.address-box .addr-name{font-family:'Marcellus',serif;font-size:19px;color:var(--ink);margin-bottom:4px;}
+.address-box .addr-note{font-family:'Inter',sans-serif;font-size:13.5px;color:var(--ink-body);margin-top:10px;}
+.address-box .addr-note a{color:var(--purple-legible);text-decoration:underline;text-underline-offset:3px;}
+
+/* day timeline */
+.day-table{margin-top:8px;border-top:.5px solid var(--line);max-width:66ch;}
+.day-row{display:flex;align-items:baseline;gap:20px;padding:13px 4px;border-bottom:.5px solid var(--line);}
+.day-time{flex-shrink:0;width:112px;font-family:'Inter',sans-serif;font-size:13.5px;font-weight:600;color:var(--purple-legible);font-variant-numeric:tabular-nums;letter-spacing:.02em;}
+.day-activity{font-family:'PT Serif',serif;font-size:16.5px;color:var(--ink);}
+@media(max-width:480px){
+  .day-row{flex-direction:column;gap:3px;padding:11px 4px;}
+  .day-time{width:auto;}
+}
+
+/* footer */
+.footer{background:var(--paper-warm);border-top:.5px solid var(--line);padding:48px clamp(20px,5vw,48px) 40px;text-align:center;}
+.footer-markline{display:flex;align-items:center;justify-content:center;gap:12px;font-family:'Marcellus',serif;font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);}
+.footer-markline img{height:14px;width:auto;filter:invert(1);opacity:.75;}
+.footer-sub{font-family:'Inter',sans-serif;font-size:13px;color:var(--ink-body);margin-top:12px;}
+.footer-links{margin-top:16px;font-family:'Inter',sans-serif;font-size:13px;}
+.footer-links a{color:var(--purple-legible);text-decoration:underline;text-underline-offset:3px;display:inline-flex;align-items:center;min-height:44px;padding:0 4px;}
+.footer-small{font-family:'Inter',sans-serif;font-size:12px;color:var(--ink-body);opacity:.7;margin-top:24px;}
+.phone-link{color:inherit;text-decoration:underline;text-underline-offset:3px;}
+
+a:focus-visible{outline:2px solid var(--purple-legible);outline-offset:3px;}
+@media(prefers-reduced-motion:reduce){ html{scroll-behavior:auto;} }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main-content">Skip to content</a>
+
+<!-- ── sticky nav ── -->
+<header class="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="https://www.shoonyadance.com" aria-label="Shoonya Dance Centre"><img src="../assets/oo-mark.png" alt=""></a>
+    <nav class="nav-jump" aria-label="On this page">
+      <a href="#travel">Arrival &amp; departure</a>
+      <a href="#getting-there">Getting there</a>
+      <a href="#packing">What to bring</a>
+      <a href="#stay">Your stay</a>
+      <a href="#good-to-know">Good to know</a>
+    </nav>
+    <a class="nav-lang" href="/info/nl/" hreflang="nl" lang="nl">NL</a>
+  </div>
+</header>
+
+<main id="main-content">
+
+<!-- ── hero ── -->
+<section class="hero-band">
+  <img src="../assets/retreat-band.webp" alt="Shaded terrace at the Auberge des Seguins, Buoux, South of France" loading="eager" width="1400" height="934">
+  <div class="hero-band-overlay"></div>
+  <div class="hero-band-inner wrap">
+    <p class="eyebrow">Practical info · For registered participants</p>
+    <h1>Zomerstage 2027 — everything you need to know</h1>
+    <p class="hero-band-meta">3–9 July 2027 · Auberge des Seguins, Buoux · South of France</p>
+  </div>
+</section>
+
+<!-- ── at a glance ── -->
+<div class="wrap glance-wrap">
+  <div class="glance">
+    <p class="glance-title">Your retreat at a glance</p>
+    <div class="glance-grid">
+      <div class="glance-item">
+        <span class="g-label">Dates</span>
+        <span class="g-value">3–9 July 2027</span>
+        <span class="g-sub">Six nights</span>
+      </div>
+      <div class="glance-item">
+        <span class="g-label">Where</span>
+        <span class="g-value">Auberge des Seguins</span>
+        <span class="g-sub">84480 Buoux, France · <a href="https://goo.gl/maps/vknGdW3RPnA2">map</a></span>
+      </div>
+      <div class="glance-item">
+        <span class="g-label">Arrive</span>
+        <span class="g-value">Sat 3 July, from 17:00</span>
+        <span class="g-sub">Not earlier — see below</span>
+      </div>
+      <div class="glance-item">
+        <span class="g-label">Depart</span>
+        <span class="g-value">Fri 9 July, after breakfast</span>
+        <span class="g-sub">Breakfast from 8:00</span>
+      </div>
+      <div class="glance-item">
+        <span class="g-label">Emergency (valley landline)</span>
+        <span class="g-value"><a class="phone-link" href="tel:+33490741637">0033 (0)490 741 637</a></span>
+        <span class="g-sub">Almost no mobile signal on site</span>
+      </div>
+      <div class="glance-item">
+        <span class="g-label">Questions</span>
+        <span class="g-value" style="font-size:16px;"><a href="https://www.shoonyadance.com/contact">shoonyadance.com/contact</a></span>
+      </div>
+    </div>
+    <p class="glance-note"><strong>Please read this overview carefully</strong> — especially before you buy a TGV ticket. The final class timetable will be published on our website closer to the date.</p>
+  </div>
+</div>
+
+<!-- ── 1 · before you travel ── -->
+<section class="block" id="travel">
+  <div class="wrap">
+    <p class="eyebrow">Start here</p>
+    <h2 class="sec-head">Arrival &amp; departure</h2>
+    <p class="sec-intro">The dates and times below affect what train you should book — please read this before anything else.</p>
+    <ul class="info-list">
+      <li>We expect you at the Auberge on <strong>Saturday 3 July, from 17:00</strong>. Arriving earlier isn't possible — we need the time to change over groups and set up, so please don't arrive before 17:00.</li>
+      <li>Please <strong>don't book the night before at the Auberge des Seguins itself</strong> — staying nearby is of course fine, just not at the Auberge. You can always enjoy an ice cream on a terrace in a nearby village before you arrive.</li>
+      <li>The retreat ends on <strong>Friday 9 July, after breakfast</strong>. Breakfast starts at 8:00, which is also when reception opens to settle your drinks bill from the week — so don't book a return train that leaves too early (more under “Getting there”).</li>
+      <li>The <strong>final class timetable</strong> will be published on our website closer to the date.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ── 2 · getting there ── -->
+<section class="block cream" id="getting-there">
+  <div class="wrap">
+    <p class="eyebrow">Travel</p>
+    <h2 class="sec-head">Getting there</h2>
+    <p class="sec-intro">The Auberge is about 15 minutes from Apt and an hour from Avignon, tucked at the end of a valley.</p>
+
+    <div class="cols">
+      <div>
+        <h3 class="sub-head">By train (TGV)</h3>
+        <div class="body-copy">
+          <p>Most participants travel by TGV. Routes via <strong>Lille</strong> are often practical; book early for the widest choice of fares.</p>
+        </div>
+        <p class="link-line">Booking: <a href="https://www.thetrainline.com/en/train-times/lille-to-avignon-tgv">thetrainline.com</a> · <a href="https://www.ouigo.com">ouigo.com</a></p>
+
+        <h3 class="sub-head">From Avignon TGV to Buoux</h3>
+        <div class="body-copy">
+          <p>Take the bus from Avignon TGV station — e.g. <strong>Ligne 915 to Apt</strong> (search “bus Avignon gare TGV - Apt” for times). At the Gare Routière in Apt, book a <strong>taxi or Uber</strong> on the spot, ideally sharing with a few others. The ride to the Auberge takes about <strong>15 minutes and costs €40–60</strong>.</p>
+        </div>
+
+        <h3 class="sub-head">Your return trip</h3>
+        <div class="body-copy">
+          <p>Don't book your return TGV too early. Breakfast on Friday starts at 8:00 (when reception opens for drinks bills). A taxi from the Auberge to Apt takes ~15 min — but it'll be hard to find one before 8:00 — and the bus from Apt to Avignon TGV takes about 1.5 hours.</p>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="sub-head">By car</h3>
+        <div class="address-box">
+          <p class="addr-name">Auberge des Seguins</p>
+          <p class="link-line" style="margin-top:2px;">84480 Buoux, France — findable by name in most GPS apps.</p>
+          <p class="addr-note"><a href="https://goo.gl/maps/vknGdW3RPnA2">Open in Google Maps →</a></p>
+        </div>
+        <ol class="dir-list">
+          <li>From <strong>Bonnieux</strong>, take the D36 towards Lourmarin (about 5 km).</li>
+          <li>Turn left onto the D943.</li>
+          <li>After 2 km, turn right onto the D113.</li>
+          <li>After 1.5 km, turn right again (just before Buoux) and follow a small road for another 3.5 km.</li>
+          <li>The village of Buoux is tiny — you're through it before you notice.</li>
+          <li>The Auberge lies at the end of the valley. When the asphalt turns to an unpaved track it may feel wrong, but keep going slowly and follow your GPS.</li>
+        </ol>
+
+        <h3 class="sub-head">Carpooling</h3>
+        <div class="body-copy">
+          <p>Closer to the retreat we'll open a <strong>participant group</strong> for carpooling and questions — watch your inbox. As a guideline (4 people per car), we suggest <strong>€202 per person</strong> for the round trip (2064 km at €0.30/km + €186 tolls = €806, split by four). With fewer people per car, this rises accordingly.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 3 · what to bring ── -->
+<section class="block" id="packing">
+  <div class="wrap">
+    <p class="eyebrow">Pack for it</p>
+    <h2 class="sec-head">What to bring</h2>
+    <ul class="info-list list-2col">
+      <li><strong>Dance shoes</strong> — several pairs (not your best). There are 3 floors: ballet floor, OSB and tiles.</li>
+      <li><strong>A yoga mat</strong> — if you'd like to join the yoga classes (we don't provide them).</li>
+      <li><strong>Swimwear and towels</strong> for the pool.</li>
+      <li>A <strong>water bottle</strong> to refill throughout the day.</li>
+      <li>Enough <strong>t-shirts, deodorant and shower gel</strong> for the full week.</li>
+      <li><strong>Sunscreen, aftersun, sunglasses and a sun hat</strong> — classes are outdoors, in the sun.</li>
+      <li><strong>Insect spray</strong> for mosquitoes and other insects.</li>
+      <li><strong>Sheets or a sleeping bag and towels</strong> — only if you're in the sleeping loft. Linens and towels are provided in every other room.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ── 4 · your stay ── -->
+<section class="block cream" id="stay">
+  <div class="wrap">
+    <p class="eyebrow">On site</p>
+    <h2 class="sec-head">Your stay</h2>
+    <p class="sec-intro">A relaxed week, with classes for first-time and experienced dancers.</p>
+
+    <h3 class="sub-head">The setting</h3>
+    <div class="body-copy">
+      <p>The Auberge sits in the Aiguebrun valley, in the heart of the Luberon, tucked at the foot of a tall cliff that shelters it from the Mistral — no traffic, no light pollution. Hiking trails start at the door, climbing spots are ten minutes away, and the huge open-air pool is at the centre of it all.</p>
+    </div>
+
+    <h3 class="sub-head">Your room</h3>
+    <div class="body-copy">
+      <p>The rooms are simple and full of character — some with exposed rock, a fireplace or a small terrace. You'll be in the room type you booked, together with the people you booked with. Most rooms have a private bathroom; the sleeping loft has shared showers and toilets. Linens and towels are provided in every room except the loft.</p>
+    </div>
+
+    <h3 class="sub-head">Meals &amp; drinks</h3>
+    <div class="callout">
+      <span class="callout-label">Dinner seating — good to know</span>
+      <p>All meals at the retreat are <strong>vegetarian</strong>. The one choice is dinner: you could opt to eat non-vegetarian there, and <strong>non-vegetarian diners sit at their own table</strong> so the kitchen can serve everyone efficiently. You made that choice when you registered — so if you'd like to sit with friends or a partner at dinner, make sure you selected the same option.</p>
+    </div>
+    <div class="body-copy" style="margin-top:20px;">
+      <p>Three organic, locally sourced meals a day, plus an afternoon snack. Water is provided at meals and during classes; other drinks can be bought on site and aren't included in the price.</p>
+    </div>
+
+    <h3 class="sub-head">A typical day</h3>
+    <div class="day-table">
+      <div class="day-row"><span class="day-time">8:00</span><span class="day-activity">Breakfast</span></div>
+      <div class="day-row"><span class="day-time">9:00–12:00</span><span class="day-activity">Dance block 1</span></div>
+      <div class="day-row"><span class="day-time">12:30</span><span class="day-activity">Lunch</span></div>
+      <div class="day-row"><span class="day-time">16:00</span><span class="day-activity">Snack &amp; drink</span></div>
+      <div class="day-row"><span class="day-time">16:10–19:30</span><span class="day-activity">Dance block 2</span></div>
+      <div class="day-row"><span class="day-time">20:00</span><span class="day-activity">Dinner</span></div>
+      <div class="day-row"><span class="day-time">22:00</span><span class="day-activity">Evening social</span></div>
+    </div>
+    <p class="link-line" style="margin-top:14px;">Mornings and evenings are for classes; the long afternoons are free — pool, walks, nearby villages. The final timetable follows closer to the date.</p>
+
+    <h3 class="sub-head">The theme night</h3>
+    <div class="body-copy">
+      <p>The Buoux theme night returns. We'll share this year's theme closer to the date — keep an eye on your inbox so you can prepare your outfit in time.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── 5 · good to know ── -->
+<section class="block" id="good-to-know">
+  <div class="wrap">
+    <p class="eyebrow">Good to know</p>
+    <h2 class="sec-head">A few last things</h2>
+    <ul class="info-list">
+      <li>Because of the valley, there's <strong>almost no mobile reception</strong>. For emergencies there's a landline: <strong><a class="phone-link" href="tel:+33490741637">0033 (0)490 741 637</a></strong>.</li>
+      <li><strong>Wifi</strong> is sometimes available at reception.</li>
+      <li>You are <strong>insured via Danspunt</strong>.</li>
+      <li>Closer to the date we'll open a <strong>participant group</strong> (WhatsApp/Facebook) for carpooling and last questions — watch your inbox.</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<!-- ── footer ── -->
+<footer class="footer">
+  <div class="footer-markline">
+    <img src="../assets/oo-mark.png" alt="">
+    Shoonya Dance Centre
+    <img src="../assets/oo-mark.png" alt="">
+  </div>
+  <p class="footer-sub">Non-profit dance &amp; culture organisation · Ghent, Belgium</p>
+  <div class="footer-links">
+    <a href="https://www.shoonyadance.com/contact">Questions? Contact us</a>
+  </div>
+  <p class="footer-small">© 2027 Shoonya Dance Centre</p>
+</footer>
+
+</body>
+</html>

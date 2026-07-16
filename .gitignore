@@ -1,0 +1,5 @@
+_build/
+DEPLOY.md
+info/CONTENT_SPEC.md
+ARTIFACTS.log
+.DS_Store

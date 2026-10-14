@@ -78,7 +78,7 @@
     {"@type":"Question","name":"Who is it for — do I need experience?","acceptedAnswer":{"@type":"Answer","text":"The programme includes speed courses for first-time dancers and advanced courses for dancers with more experience."}},
     {"@type":"Question","name":"What's included in the price?","acceptedAnswer":{"@type":"Answer","text":"Your six-night stay, three organic and locally sourced meals a day plus an afternoon snack, and all the dance and yoga classes you choose (95+ hours offered). All meals are vegetarian, with the option to eat non-vegetarian at dinner. Transport and drinks are not included."}},
     {"@type":"Question","name":"What are the accommodation options and prices?","acceptedAnswer":{"@type":"Answer","text":"Per person, including your stay, meals and classes: sleeping loft €670, 4-person room €895, 3-person room €950, 2-person room €980, single room €1,095."}},
-    {"@type":"Question","name":"How do I register?","acceptedAnswer":{"@type":"Answer","text":"Registration opens on 15 October 2026. You send a request, we approve it, and your place is held for you for 8 days to pay the €200 deposit (non-refundable). Until then, subscribe to the newsletter and you'll be the first to know."}},
+    {"@type":"Question","name":"How do I register?","acceptedAnswer":{"@type":"Answer","text":"Registration opens on 15 October 2026 at 10:00 (Brussels time). You send a request on the registration form, we approve it, and your place is held for you for 8 days to pay the €200 deposit (non-refundable)."}},
     {"@type":"Question","name":"How does payment work?","acceptedAnswer":{"@type":"Answer","text":"A €200 deposit per person confirms your spot and is non-refundable. You send a request; once we approve it, your place is held for you for 8 days to pay the deposit. A second instalment of €250 is due by 15 January 2027 and the remaining balance by 1 May 2027, both by bank transfer."}},
     {"@type":"Question","name":"What is the cancellation policy?","acceptedAnswer":{"@type":"Answer","text":"Cancel before 1 January 2027 and you lose the €200 deposit; before 1 March 2027 the fee is €500; after 1 March 2027 the full amount is due. Fees are charged per participant."}}
   ]
@@ -485,7 +485,30 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
   .nav,.stickybar{transition:none;}
   .btn:active,.nav-cta:active{transform:none;}
 }
+/* ── registration switch (Codex 14 Oct 2026): "pre" = newsletter copy (the default, also without JS), "post" = registration copy.
+   The head script sets html.reg-open at 2026-10-15T08:00:00Z (Thursday 10:00 Brussels time) and keeps checking while a tab stays open. ── */
+html:not(.reg-open) [data-when="post"]{display:none!important}
+html.reg-open [data-when="pre"]{display:none!important}
 </style>
+<script>
+/* Registration opens Thursday 15 October 2026, 10:00 Brussels time = 08:00 UTC. At that instant every "pre" (newsletter) element gives way to its "post" (registration) twin:
+   html.reg-open. A tab that was opened earlier and stays open switches too: the clock is re-read on a short timer and whenever the tab comes back (focus, visibility, pageshow).
+   The registration form itself refuses requests before the opening time, so a wrong clock can only show the button early, never open registration. */
+(function(){
+  var OPEN = Date.UTC(2026, 9, 15, 8, 0, 0), root = document.documentElement, timer = null;
+  function stop(){
+    if (timer !== null) { clearTimeout(timer); timer = null; }
+    window.removeEventListener('focus', check); window.removeEventListener('pageshow', check); document.removeEventListener('visibilitychange', check);
+  }
+  function check(){
+    if (timer !== null) { clearTimeout(timer); timer = null; }
+    if (Date.now() >= OPEN) { root.classList.add('reg-open'); stop(); return; }
+    timer = setTimeout(check, Math.max(250, Math.min(15000, OPEN - Date.now())));
+  }
+  window.addEventListener('focus', check); window.addEventListener('pageshow', check); document.addEventListener('visibilitychange', check);
+  check();
+})();
+</script>
 </head>
 <body>
 
@@ -504,7 +527,8 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
   </ul>
   <div class="nav-actions">
     <a class="nav-lang" href="/nl/" aria-label="View this page in Dutch">NL</a>
-    <a class="nav-cta" href="https://www.shoonyadance.com/newsletter">Get notified</a>
+    <a class="nav-cta" data-when="pre" href="https://www.shoonyadance.com/newsletter">Get notified</a>
+    <a class="nav-cta" data-when="post" href="https://tickets.shoonyadance.com/register/zomerstage?edition=zomerstage-2027&amp;lang=en">Register</a>
   </div>
 </nav>
 
@@ -526,9 +550,11 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
     <p class="hero-sub">Six nights, five full class days, and the Provençal summer in between.</p>
     <p class="hero-meta">3–9 July 2027 · South of France</p>
     <div class="hero-actions">
-      <a class="btn btn-primary" href="https://www.shoonyadance.com/newsletter">Get notified →</a>
+      <a class="btn btn-primary" data-when="pre" href="https://www.shoonyadance.com/newsletter">Get notified →</a>
+      <a class="btn btn-primary" data-when="post" href="https://tickets.shoonyadance.com/register/zomerstage?edition=zomerstage-2027&amp;lang=en">Register →</a>
     </div>
-    <p class="hero-note">Registration opens 15 October 2026.</p>
+    <p class="hero-note" data-when="pre">Registration opens Thursday 15 October 2026 at 10:00 (Brussels time).</p>
+    <p class="hero-note" data-when="post">Registration is open. Send your request: we approve it and hold your place for 8 days.</p>
   </div>
 </header>
 
@@ -740,9 +766,12 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 <!-- MID CTA (quiet instance) -->
 <section class="cta-mid">
   <div class="wrap reveal">
-    <h3>Hear when registration opens.</h3>
-    <p>Registration opens on 15 October 2026. Subscribe to the newsletter and we'll let you know the moment it does.</p>
-    <a class="btn btn-cream" href="https://www.shoonyadance.com/newsletter">Get notified →</a>
+    <h3 data-when="pre">Hear when registration opens.</h3>
+    <h3 data-when="post">Registration is open.</h3>
+    <p data-when="pre">Registration opens on 15 October 2026 at 10:00 (Brussels time). Subscribe to the newsletter and we'll let you know the moment it does.</p>
+    <p data-when="post">Send your request: we approve it, and your place is held for you for 8 days to pay the €200 deposit (non-refundable).</p>
+    <a class="btn btn-cream" data-when="pre" href="https://www.shoonyadance.com/newsletter">Get notified →</a>
+    <a class="btn btn-cream" data-when="post" href="https://tickets.shoonyadance.com/register/zomerstage?edition=zomerstage-2027&amp;lang=en">Register →</a>
   </div>
 </section>
 
@@ -827,7 +856,8 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
       </details>
     </div>
 
-    <p class="price-note reveal">Registration opens 15 October 2026 — <a href="https://www.shoonyadance.com/newsletter">Get notified</a> when it does.</p>
+    <p class="price-note reveal" data-when="pre">Registration opens 15 October 2026 at 10:00 (Brussels time) — <a href="https://www.shoonyadance.com/newsletter">Get notified</a> when it does.</p>
+    <p class="price-note reveal" data-when="post">Registration is open — <a href="https://tickets.shoonyadance.com/register/zomerstage?edition=zomerstage-2027&amp;lang=en">register now</a>.</p>
   </div>
 </section>
 
@@ -875,7 +905,8 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
       </details>
       <details class="faq-item">
         <summary class="faq-q"><span>How do I register?</span></summary>
-        <p class="faq-a">Registration opens on 15 October 2026. You send a request, we approve it, and your place is held for you for 8 days to pay the €200 deposit (non-refundable). Until then, subscribe to the newsletter and you'll be the first to know.</p>
+        <p class="faq-a" data-when="pre">Registration opens on 15 October 2026 at 10:00 (Brussels time). You send a request, we approve it, and your place is held for you for 8 days to pay the €200 deposit (non-refundable). Until then, subscribe to the newsletter and you'll be the first to know.</p>
+        <p class="faq-a" data-when="post">Registration is open. You send a request on the <a href="https://tickets.shoonyadance.com/register/zomerstage?edition=zomerstage-2027&amp;lang=en">registration form</a>, we approve it, and your place is held for you for 8 days to pay the €200 deposit (non-refundable).</p>
       </details>
       <details class="faq-item">
         <summary class="faq-q"><span>How does payment work?</span></summary>
@@ -892,9 +923,12 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 <!-- §10 CTA BAND -->
 <section class="cta-band" id="register">
   <div class="reveal">
-    <h2>Hear when registration opens.</h2>
-    <p>Registration opens on 15 October 2026. Subscribe to the newsletter and we'll let you know the moment it does.</p>
-    <a class="btn btn-cream" href="https://www.shoonyadance.com/newsletter">Get notified →</a>
+    <h2 data-when="pre">Hear when registration opens.</h2>
+    <h2 data-when="post">Registration is open.</h2>
+    <p data-when="pre">Registration opens on 15 October 2026 at 10:00 (Brussels time). Subscribe to the newsletter and we'll let you know the moment it does.</p>
+    <p data-when="post">Send your request: we approve it, and your place is held for you for 8 days to pay the €200 deposit (non-refundable).</p>
+    <a class="btn btn-cream" data-when="pre" href="https://www.shoonyadance.com/newsletter">Get notified →</a>
+    <a class="btn btn-cream" data-when="post" href="https://tickets.shoonyadance.com/register/zomerstage?edition=zomerstage-2027&amp;lang=en">Register →</a>
   </div>
 </section>
 
@@ -919,7 +953,8 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 <div class="stickybar" id="stickybar">
   <div class="stickybar-inner">
     <span class="stickybar-label">Zomerstage 2027</span>
-    <a class="btn btn-primary" href="https://www.shoonyadance.com/newsletter">Get notified →</a>
+    <a class="btn btn-primary" data-when="pre" href="https://www.shoonyadance.com/newsletter">Get notified →</a>
+    <a class="btn btn-primary" data-when="post" href="https://tickets.shoonyadance.com/register/zomerstage?edition=zomerstage-2027&amp;lang=en">Register →</a>
   </div>
 </div>
 

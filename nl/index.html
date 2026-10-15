@@ -78,7 +78,7 @@
     {"@type":"Question","name":"Voor wie is het — heb ik ervaring nodig?","acceptedAnswer":{"@type":"Answer","text":"Het programma bevat versnelde cursussen voor wie voor het eerst danst en gevorderde cursussen voor dansers met meer ervaring."}},
     {"@type":"Question","name":"Wat is inbegrepen in de prijs?","acceptedAnswer":{"@type":"Answer","text":"Je verblijf van zes nachten, drie biologische en lokale maaltijden per dag plus een tussendoortje in de namiddag, en alle dans- en yogalessen die je kiest (95+ lesuren aangeboden). Alle maaltijden zijn vegetarisch, met de optie om 's avonds niet-vegetarisch te eten. Vervoer en drank zijn niet inbegrepen."}},
     {"@type":"Question","name":"Wat zijn de overnachtingsopties en prijzen?","acceptedAnswer":{"@type":"Answer","text":"Per persoon, met verblijf, maaltijden en lessen inbegrepen: slaapzolder €670, kamer voor 4 personen €895, kamer voor 3 personen €950, kamer voor 2 personen €980, eenpersoonskamer €1.095."}},
-    {"@type":"Question","name":"Hoe schrijf ik me in?","acceptedAnswer":{"@type":"Answer","text":"Inschrijvingen openen op 15 oktober 2026 om 10:00 (Belgische tijd). Je dient een aanvraag in via het inschrijfformulier, wij keuren ze goed en je plaats is 8 dagen voor je gereserveerd om het voorschot van €200 (niet terugbetaalbaar) te betalen."}},
+    {"@type":"Question","name":"Hoe schrijf ik me in?","acceptedAnswer":{"@type":"Answer","text":"De inschrijving is momenteel gesloten. Het inschrijfformulier toont wanneer je een aanvraag kunt indienen. Elke aanvraag doorloopt dezelfde controle van de kamerindeling en beschikbare plaatsen. Zo voorkomen we dubbele kamertoewijzingen en fouten. Je dient een aanvraag in via het inschrijfformulier, wij keuren ze goed en je plaats is 8 dagen voor je gereserveerd om het voorschot van €200 (niet terugbetaalbaar) te betalen."}},
     {"@type":"Question","name":"Hoe verloopt de betaling?","acceptedAnswer":{"@type":"Answer","text":"Een voorschot van €200 per persoon bevestigt je plaats en is niet terugbetaalbaar. Je dient een aanvraag in; keuren we ze goed, dan is je plaats 8 dagen voor je gereserveerd om het voorschot te betalen. Een tweede schijf van €250 is verschuldigd tegen 15 januari 2027 en het resterende saldo tegen 1 mei 2027, beide per bankoverschrijving."}},
     {"@type":"Question","name":"Wat is het annuleringsbeleid?","acceptedAnswer":{"@type":"Answer","text":"Annuleer je voor 1 januari 2027, dan verlies je het voorschot van €200; voor 1 maart 2027 bedraagt de kost €500; na 1 maart 2027 is het volledige bedrag verschuldigd. De kosten worden per deelnemer aangerekend."}}
   ]
@@ -485,30 +485,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
   .nav,.stickybar{transition:none;}
   .btn:active,.nav-cta:active{transform:none;}
 }
-/* ── registration switch (Codex 14 Oct 2026): "pre" = newsletter copy (the default, also without JS), "post" = registration copy.
-   The head script sets html.reg-open at 2026-10-15T08:00:00Z (Thursday 10:00 Brussels time) and keeps checking while a tab stays open. ── */
-html:not(.reg-open) [data-when="post"]{display:none!important}
-html.reg-open [data-when="pre"]{display:none!important}
 </style>
-<script>
-/* Registration opens Thursday 15 October 2026, 10:00 Brussels time = 08:00 UTC. At that instant every "pre" (newsletter) element gives way to its "post" (registration) twin:
-   html.reg-open. A tab that was opened earlier and stays open switches too: the clock is re-read on a short timer and whenever the tab comes back (focus, visibility, pageshow).
-   The registration form itself refuses requests before the opening time, so a wrong clock can only show the button early, never open registration. */
-(function(){
-  var OPEN = Date.UTC(2026, 9, 15, 8, 0, 0), root = document.documentElement, timer = null;
-  function stop(){
-    if (timer !== null) { clearTimeout(timer); timer = null; }
-    window.removeEventListener('focus', check); window.removeEventListener('pageshow', check); document.removeEventListener('visibilitychange', check);
-  }
-  function check(){
-    if (timer !== null) { clearTimeout(timer); timer = null; }
-    if (Date.now() >= OPEN) { root.classList.add('reg-open'); stop(); return; }
-    timer = setTimeout(check, Math.max(250, Math.min(15000, OPEN - Date.now())));
-  }
-  window.addEventListener('focus', check); window.addEventListener('pageshow', check); document.addEventListener('visibilitychange', check);
-  check();
-})();
-</script>
 </head>
 <body>
 
@@ -527,8 +504,7 @@ html.reg-open [data-when="pre"]{display:none!important}
   </ul>
   <div class="nav-actions">
     <a class="nav-lang" href="/" aria-label="Bekijk deze pagina in het Engels">EN</a>
-    <a class="nav-cta" data-when="pre" href="https://www.shoonyadance.com/newsletter">Hou me op de hoogte</a>
-    <a class="nav-cta" data-when="post" href="https://tickets.shoonyadance.com/register/zomerstage?edition=zomerstage-2027&amp;lang=nl">Schrijf je in</a>
+    <a class="nav-cta" href="https://tickets.shoonyadance.com/register/zomerstage?edition=zomerstage-2027&amp;lang=nl">Inschrijfformulier</a>
   </div>
 </nav>
 
@@ -550,12 +526,10 @@ html.reg-open [data-when="pre"]{display:none!important}
     <p class="hero-sub">Zes nachten, vijf volle lesdagen en de Provençaalse zomer ertussenin.</p>
     <p class="hero-meta">3–9 juli 2027 · Zuid-Frankrijk</p>
     <div class="hero-actions">
-      <a class="btn btn-primary" data-when="pre" href="https://www.shoonyadance.com/newsletter">Hou me op de hoogte →</a>
-      <a class="btn btn-primary" data-when="post" href="https://tickets.shoonyadance.com/register/zomerstage?edition=zomerstage-2027&amp;lang=nl">Schrijf je in →</a>
+      <a class="btn btn-primary" href="https://tickets.shoonyadance.com/register/zomerstage?edition=zomerstage-2027&amp;lang=nl">Inschrijfformulier →</a>
     </div>
-    <p class="hero-note" data-when="pre">Inschrijvingen openen donderdag 15 oktober 2026 om 10:00 (Belgische tijd).</p>
-    <p class="hero-note" data-when="post">De inschrijving is open. Dien je aanvraag in: wij keuren ze goed en je plaats is 8 dagen voor je gereserveerd.</p>
-    <noscript><p class="hero-note">Inschrijfformulier (opent op 15 oktober 2026 om 10:00 Belgische tijd): <a href="https://tickets.shoonyadance.com/register/zomerstage?edition=zomerstage-2027&amp;lang=nl" style="color:inherit;text-decoration:underline;">Ga naar het inschrijfformulier →</a></p></noscript>
+    <p class="hero-note">De inschrijving is momenteel gesloten. Dien je aanvraag in: wij keuren ze goed en je plaats is 8 dagen voor je gereserveerd.</p>
+
   </div>
 </header>
 
@@ -767,12 +741,9 @@ html.reg-open [data-when="pre"]{display:none!important}
 <!-- MID CTA (quiet instance) -->
 <section class="cta-mid">
   <div class="wrap reveal">
-    <h3 data-when="pre">Hoor wanneer de inschrijvingen openen.</h3>
-    <h3 data-when="post">De inschrijving is open.</h3>
-    <p data-when="pre">De inschrijvingen openen op 15 oktober 2026 om 10:00 (Belgische tijd). Via de nieuwsbrief hoor je het meteen.</p>
-    <p data-when="post">Dien je aanvraag in: wij keuren ze goed en je plaats is 8 dagen voor je gereserveerd om het voorschot van €200 (niet terugbetaalbaar) te betalen.</p>
-    <a class="btn btn-cream" data-when="pre" href="https://www.shoonyadance.com/newsletter">Hou me op de hoogte →</a>
-    <a class="btn btn-cream" data-when="post" href="https://tickets.shoonyadance.com/register/zomerstage?edition=zomerstage-2027&amp;lang=nl">Schrijf je in →</a>
+    <h3>De inschrijving is momenteel gesloten.</h3>
+    <p>Dien je aanvraag in: wij keuren ze goed en je plaats is 8 dagen voor je gereserveerd om het voorschot van €200 (niet terugbetaalbaar) te betalen.</p>
+    <a class="btn btn-cream" href="https://tickets.shoonyadance.com/register/zomerstage?edition=zomerstage-2027&amp;lang=nl">Inschrijfformulier →</a>
   </div>
 </section>
 
@@ -857,8 +828,7 @@ html.reg-open [data-when="pre"]{display:none!important}
       </details>
     </div>
 
-    <p class="price-note reveal" data-when="pre">Inschrijvingen openen op 15 oktober 2026 om 10:00 (Belgische tijd) — <a href="https://www.shoonyadance.com/newsletter">hou me op de hoogte</a> zodra het zover is.</p>
-    <p class="price-note reveal" data-when="post">De inschrijving is open — <a href="https://tickets.shoonyadance.com/register/zomerstage?edition=zomerstage-2027&amp;lang=nl">schrijf je in</a>.</p>
+    <p class="price-note reveal">De inschrijving is momenteel gesloten — <a href="https://tickets.shoonyadance.com/register/zomerstage?edition=zomerstage-2027&amp;lang=nl">bekijk het inschrijfformulier</a>.</p>
   </div>
 </section>
 
@@ -906,8 +876,8 @@ html.reg-open [data-when="pre"]{display:none!important}
       </details>
       <details class="faq-item">
         <summary class="faq-q"><span>Hoe schrijf ik me in?</span></summary>
-        <p class="faq-a" data-when="pre">Inschrijvingen openen op 15 oktober 2026 om 10:00 (Belgische tijd). Je dient een aanvraag in, wij keuren ze goed en je plaats is 8 dagen voor je gereserveerd om het voorschot van €200 (niet terugbetaalbaar) te betalen. Schrijf je tot dan in op de nieuwsbrief en je bent de eerste die het hoort.</p>
-        <p class="faq-a" data-when="post">De inschrijving is open. Je dient een aanvraag in via het <a href="https://tickets.shoonyadance.com/register/zomerstage?edition=zomerstage-2027&amp;lang=nl">inschrijfformulier</a>, wij keuren ze goed en je plaats is 8 dagen voor je gereserveerd om het voorschot van €200 (niet terugbetaalbaar) te betalen.</p>
+        <p class="faq-a">Elke aanvraag doorloopt dezelfde controle van de kamerindeling en beschikbare plaatsen. Zo voorkomen we dubbele kamertoewijzingen en fouten.</p>
+        <p class="faq-a">De inschrijving is momenteel gesloten. Je dient een aanvraag in via het <a href="https://tickets.shoonyadance.com/register/zomerstage?edition=zomerstage-2027&amp;lang=nl">inschrijfformulier</a>, wij keuren ze goed en je plaats is 8 dagen voor je gereserveerd om het voorschot van €200 (niet terugbetaalbaar) te betalen.</p>
       </details>
       <details class="faq-item">
         <summary class="faq-q"><span>Hoe verloopt de betaling?</span></summary>
@@ -924,13 +894,10 @@ html.reg-open [data-when="pre"]{display:none!important}
 <!-- §10 CTA BAND -->
 <section class="cta-band" id="register">
   <div class="reveal">
-    <h2 data-when="pre">Hoor wanneer de inschrijvingen openen.</h2>
-    <h2 data-when="post">De inschrijving is open.</h2>
-    <p data-when="pre">De inschrijvingen openen op 15 oktober 2026 om 10:00 (Belgische tijd). Via de nieuwsbrief hoor je het meteen.</p>
-    <p data-when="post">Dien je aanvraag in: wij keuren ze goed en je plaats is 8 dagen voor je gereserveerd om het voorschot van €200 (niet terugbetaalbaar) te betalen.</p>
-    <a class="btn btn-cream" data-when="pre" href="https://www.shoonyadance.com/newsletter">Hou me op de hoogte →</a>
-    <a class="btn btn-cream" data-when="post" href="https://tickets.shoonyadance.com/register/zomerstage?edition=zomerstage-2027&amp;lang=nl">Schrijf je in →</a>
-    <noscript><p>Inschrijfformulier (opent op 15 oktober 2026 om 10:00 Belgische tijd): <a href="https://tickets.shoonyadance.com/register/zomerstage?edition=zomerstage-2027&amp;lang=nl" style="color:inherit;text-decoration:underline;">Ga naar het inschrijfformulier →</a></p></noscript>
+    <h2>De inschrijving is momenteel gesloten.</h2>
+    <p>Dien je aanvraag in: wij keuren ze goed en je plaats is 8 dagen voor je gereserveerd om het voorschot van €200 (niet terugbetaalbaar) te betalen.</p>
+    <a class="btn btn-cream" href="https://tickets.shoonyadance.com/register/zomerstage?edition=zomerstage-2027&amp;lang=nl">Inschrijfformulier →</a>
+
   </div>
 </section>
 
@@ -955,8 +922,7 @@ html.reg-open [data-when="pre"]{display:none!important}
 <div class="stickybar" id="stickybar">
   <div class="stickybar-inner">
     <span class="stickybar-label">Zomerstage 2027</span>
-    <a class="btn btn-primary" data-when="pre" href="https://www.shoonyadance.com/newsletter">Hou me op de hoogte →</a>
-    <a class="btn btn-primary" data-when="post" href="https://tickets.shoonyadance.com/register/zomerstage?edition=zomerstage-2027&amp;lang=nl">Schrijf je in →</a>
+    <a class="btn btn-primary" href="https://tickets.shoonyadance.com/register/zomerstage?edition=zomerstage-2027&amp;lang=nl">Inschrijfformulier →</a>
   </div>
 </div>
 
